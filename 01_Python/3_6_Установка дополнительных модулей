@@ -1,0 +1,101 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "https://stepic.org/media/attachments/course67/3.6.2/119.txt\n",
+      "25\n",
+      " \n",
+      "\"Shut the 'relatives' up,\" said Beatty, looking around at everything except Montag and his wife.\n",
+      "\n",
+      "This time, Mildred ran. The yammering voices stopped yelling in the parlor.\n",
+      "\n",
+      "Captain Beatty sat down in the most comfortable chair with a peaceful look on his ruddy face. He took time to prepare and light his brass pipe and puff out a great smoke cloud. \"Just thought I'd come by and see how the sick man is.\"\n",
+      "\n",
+      "\"How'd you guess?\"\n",
+      "\n",
+      "Beatty smiled his smile which showed the candy pinkness of his gums and the tiny candy whiteness of his teeth. \"I've seen it all. You were going to call for a night off.\"\n",
+      "\n",
+      "Montag sat in bed.\n",
+      "\n",
+      "\"Well,\" said Beatty, \"take the night off!\" He examined his eternal matchbox, the lid of which said GUARANTEED: ONE MILLION LIGHTS IN THIS IGNITER, and began to strike the chemical match abstractedly, blowout, strike, blowout, strike, speak a few words, blowout. He looked at the flame. He blew, he looked at the smoke. \"When will you be well?\"\n",
+      "\n",
+      "\"Tomorrow. The next day maybe. First of the week.\"\n",
+      "\n",
+      "Beatty puffed his pipe. \"Every fireman, sooner or later, hits this. They only need understanding, to know how the wheels run. Need to know the history of our profession. They don't feed it to rookies like they used to. Damn shame.\" Puff.  \"Only fire chiefs remember it now. \" Puff. \"I'll let you in on it.\"\n",
+      "\n",
+      "Mildred fidgeted.\n",
+      "\n",
+      "Beatty took a full minute to settle himself in and think back for what he wanted to say.\n",
+      "\n",
+      "\"When did it all start, you ask, this job of ours, how did it come about, where, when? Well, I'd say it really got started around about a thing called the Civil War.  Even though our rule book claims it was founded earlier. The fact is we didn't get along well until photography came into its own. Then motion pictures in the early twentieth century. Radio. Television. Things began to have mass.\"\n",
+      "\n",
+      "Montag sat in bed, not moving.\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "'''Скачайте файл. В нём указан адрес другого файла, который нужно скачать с \n",
+    "использованием модуля requests и посчитать число строк в нём.'''\n",
+    "import requests\n",
+    "with open('file_in_out/dataset_3378_2.txt', 'r', encoding='utf-8') as inf:\n",
+    "    url = inf.readline().strip()\n",
+    "    print(url)\n",
+    "\n",
+    "r = requests.get(url)\n",
+    "\n",
+    "ouf = open('file_in_out/dataset_3378_2_out.txt', 'w')\n",
+    "ouf.write(r.text)\n",
+    "ouf.close()\n",
+    "\n",
+    "print(len(r.text.splitlines()))\n",
+    "print(' ')\n",
+    "print(r.text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "'''Имеется набор файлов, каждый из которых, кроме последнего, содержит имя \n",
+    "следующего файла. Первое слово в тексте последнего файла: \"We\".'''\n",
+    "import requests\n",
+    "with open('file_in_out/dataset_3378_2.txt', 'r', encoding='utf-8') as inf:\n",
+    "    url = inf.readline().strip()\n",
+    "    print(url)\n",
+    "\n",
+    "r = requests.get(url)\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
